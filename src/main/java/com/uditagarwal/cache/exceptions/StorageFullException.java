@@ -1,4 +1,4 @@
-package com.company.cache.exceptions;
+package com.uditagarwal.cache.exceptions;
 
 public class StorageFullException extends RuntimeException {
 }

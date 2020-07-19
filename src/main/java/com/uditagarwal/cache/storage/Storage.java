@@ -1,7 +1,7 @@
-package com.company.cache.storage;
+package com.uditagarwal.cache.storage;
 
-import com.company.cache.exceptions.NotFoundException;
-import com.company.cache.exceptions.StorageFullException;
+import com.uditagarwal.cache.exceptions.NotFoundException;
+import com.uditagarwal.cache.exceptions.StorageFullException;
 
 public interface Storage<Key, Value> {
     public void add(Key key, Value value) throws StorageFullException;

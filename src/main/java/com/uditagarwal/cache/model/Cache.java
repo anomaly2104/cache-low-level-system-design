@@ -1,13 +1,13 @@
-package com.company.cache.model;
+package com.uditagarwal.cache.model;
 
-import com.company.cache.exceptions.NotFoundException;
-import com.company.cache.exceptions.StorageFullException;
-import com.company.cache.policies.EvictionPolicy;
-import com.company.cache.storage.Storage;
+import com.uditagarwal.cache.exceptions.NotFoundException;
+import com.uditagarwal.cache.exceptions.StorageFullException;
+import com.uditagarwal.cache.policies.EvictionPolicy;
+import com.uditagarwal.cache.storage.Storage;
 
 public class Cache<Key, Value> {
-    private EvictionPolicy<Key> evictionPolicy;
-    private Storage<Key, Value> storage;
+    private final EvictionPolicy<Key> evictionPolicy;
+    private final Storage<Key, Value> storage;
 
     public Cache(EvictionPolicy<Key> evictionPolicy, Storage<Key, Value> storage) {
         this.evictionPolicy = evictionPolicy;

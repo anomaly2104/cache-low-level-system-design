@@ -1,4 +1,4 @@
-package com.company.cache.policies;
+package com.uditagarwal.cache.policies;
 
 public interface EvictionPolicy<T> {
 
