@@ -7,6 +7,6 @@ import com.uditagarwal.cache.storage.HashMapBasedStorage;
 public class CacheFactory<Key, Value> {
 
     public Cache<Key, Value> defaultCache() {
-        return new Cache<>(new LRUEvictionPolicy<>(), new HashMapBasedStorage<>());
+        return new Cache<Key, Value>(new LRUEvictionPolicy<Key>(), new HashMapBasedStorage<Key, Value>());
     }
 }
