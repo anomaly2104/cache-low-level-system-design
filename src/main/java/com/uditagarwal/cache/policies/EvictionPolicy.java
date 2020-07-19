@@ -1,11 +1,11 @@
 package com.uditagarwal.cache.policies;
 
-public interface EvictionPolicy<T> {
+public interface EvictionPolicy<Key> {
 
-    public void keyAccessed(T key);
+    void keyAccessed(Key key);
 
     /**
      * Evict key from eviction policy and return it.
      */
-    public T evictKey();
+    Key evictKey();
 }
