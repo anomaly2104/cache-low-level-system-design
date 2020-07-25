@@ -34,22 +34,23 @@ public class DoublyLinkedList<E> {
         if (node == null) {
             throw new InvalidNodeException();
         }
-        last.next = node;
-        node.prev = last;
-        node.next = null;
-        last = node;
+        if (last == null) {
+            last = node;
+            first = node;
+        } else {
+            last.next = node;
+            node.prev = last;
+            node.next = null;
+            last = node;
+        }
     }
 
     public DoublyLinkedListNode<E> addElementAtLast(E element) {
-        DoublyLinkedListNode<E> newNode = new DoublyLinkedListNode<>(element);
-        if (last == null) {
-            last = newNode;
-            first = newNode;
-        } else {
-            addNodeAtLast(newNode);
         if (element == null) {
             throw new InvalidElementException();
         }
+        DoublyLinkedListNode<E> newNode = new DoublyLinkedListNode<>(element);
+        addNodeAtLast(newNode);
         return newNode;
     }
 }
