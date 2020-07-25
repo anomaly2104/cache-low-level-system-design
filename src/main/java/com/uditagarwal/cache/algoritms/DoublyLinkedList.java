@@ -47,6 +47,8 @@ public class DoublyLinkedList<E> {
             first = newNode;
         } else {
             addNodeAtLast(newNode);
+        if (element == null) {
+            throw new InvalidElementException();
         }
         return newNode;
     }
