@@ -1,5 +1,6 @@
 package com.uditagarwal.cache.algoritms;
 
+import com.uditagarwal.cache.algoritms.exceptions.InvalidNodeException;
 import lombok.Getter;
 
 @Getter
@@ -31,7 +32,7 @@ public class DoublyLinkedList<E> {
 
     public void addNodeAtLast(DoublyLinkedListNode<E> node) {
         if (node == null) {
-            throw new InvalidItemException();
+            throw new InvalidNodeException();
         }
         last.next = node;
         node.prev = last;
