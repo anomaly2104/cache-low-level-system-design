@@ -7,11 +7,10 @@ import lombok.Getter;
  *
  * @param <E> Type of element to be inserted into the list.
  */
+@Getter
 public class DoublyLinkedListNode<E> {
     DoublyLinkedListNode<E> next;
     DoublyLinkedListNode<E> prev;
-
-    @Getter
     E element;
 
     public DoublyLinkedListNode(E element) {
