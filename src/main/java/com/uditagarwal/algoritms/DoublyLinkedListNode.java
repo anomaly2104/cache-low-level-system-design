@@ -1,7 +1,12 @@
-package com.uditagarwal.cache.algoritms;
+package com.uditagarwal.algoritms;
 
 import lombok.Getter;
 
+/**
+ * Object which is inserted in the {@link DoublyLinkedList}. A single node is expected to be created for each element.
+ *
+ * @param <E> Type of element to be inserted into the list.
+ */
 public class DoublyLinkedListNode<E> {
     DoublyLinkedListNode<E> next;
     DoublyLinkedListNode<E> prev;

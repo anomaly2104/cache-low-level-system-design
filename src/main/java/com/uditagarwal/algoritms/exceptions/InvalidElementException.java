@@ -1,4 +1,4 @@
-package com.uditagarwal.cache.algoritms.exceptions;
+package com.uditagarwal.algoritms.exceptions;
 
 public class InvalidElementException extends RuntimeException {
 }
