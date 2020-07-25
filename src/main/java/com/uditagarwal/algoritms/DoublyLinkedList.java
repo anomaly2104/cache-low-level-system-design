@@ -34,10 +34,14 @@ public class DoublyLinkedList<E> {
         }
         if (node.equals(first)) {
             first = first.next;
-            first.prev = null;
+            if (first != null) {
+                first.prev = null;
+            }
         } else if (node.equals(last)) {
             last = last.prev;
-            last.next = null;
+            if (last.next != null) {
+                last.next = null;
+            }
         } else {
             node.prev.next = node.next;
             node.next.prev = node.prev;

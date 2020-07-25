@@ -1,8 +1,8 @@
 package com.uditagarwal.cache.policies;
 
 
-import com.uditagarwal.cache.algoritms.DoublyLinkedList;
-import com.uditagarwal.cache.algoritms.DoublyLinkedListNode;
+import com.uditagarwal.algoritms.DoublyLinkedList;
+import com.uditagarwal.algoritms.DoublyLinkedListNode;
 
 import java.util.HashMap;
 import java.util.Map;
