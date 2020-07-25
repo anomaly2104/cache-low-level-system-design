@@ -35,6 +35,6 @@ public class LRUEvictionPolicy<Key> implements EvictionPolicy<Key> {
             return null;
         }
         dll.detachNode(first);
-        return first.getKey();
+        return first.getElement();
     }
 }

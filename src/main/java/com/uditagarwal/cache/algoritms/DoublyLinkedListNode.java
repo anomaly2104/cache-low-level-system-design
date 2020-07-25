@@ -1,16 +1,16 @@
 package com.uditagarwal.cache.algoritms;
 
-public class DoublyLinkedListNode<Key> {
-    Key key;
-    DoublyLinkedListNode<Key> next;
-    DoublyLinkedListNode<Key> prev;
+import lombok.Getter;
 
-    public Key getKey() {
-        return key;
-    }
+public class DoublyLinkedListNode<E> {
+    DoublyLinkedListNode<E> next;
+    DoublyLinkedListNode<E> prev;
 
-    public DoublyLinkedListNode(Key key) {
-        this.key = key;
+    @Getter
+    E element;
+
+    public DoublyLinkedListNode(E element) {
+        this.element = element;
         this.next = null;
         this.prev = null;
     }
