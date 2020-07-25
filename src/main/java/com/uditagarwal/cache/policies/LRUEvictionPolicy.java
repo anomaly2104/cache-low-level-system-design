@@ -7,6 +7,11 @@ import com.uditagarwal.algoritms.DoublyLinkedListNode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Eviction policy based on LRU algorithm.
+ *
+ * @param <Key> Key type.
+ */
 public class LRUEvictionPolicy<Key> implements EvictionPolicy<Key> {
 
     private DoublyLinkedList<Key> dll;
