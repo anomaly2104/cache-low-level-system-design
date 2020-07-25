@@ -1,6 +1,6 @@
 package com.uditagarwal.cache.factories;
 
-import com.uditagarwal.cache.model.Cache;
+import com.uditagarwal.cache.Cache;
 import com.uditagarwal.cache.policies.LRUEvictionPolicy;
 import com.uditagarwal.cache.storage.HashMapBasedStorage;
 

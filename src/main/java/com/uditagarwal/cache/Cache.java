@@ -1,4 +1,4 @@
-package com.uditagarwal.cache.model;
+package com.uditagarwal.cache;
 
 import com.uditagarwal.cache.exceptions.NotFoundException;
 import com.uditagarwal.cache.exceptions.StorageFullException;
