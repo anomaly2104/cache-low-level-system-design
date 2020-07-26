@@ -18,7 +18,7 @@ public class HashMapBasedStorage<Key, Value> implements Storage<Key, Value> {
 
     @Override
     public void add(Key key, Value value) throws StorageFullException {
-        if (isCacheFull()) throw new StorageFullException("Capacity Full.....");
+        if (isStorageFull()) throw new StorageFullException("Capacity Full.....");
         storage.put(key, value);
     }
 
@@ -34,7 +34,7 @@ public class HashMapBasedStorage<Key, Value> implements Storage<Key, Value> {
         return storage.get(key);
     }
 
-    private boolean isCacheFull() {
+    private boolean isStorageFull() {
         return storage.size() == capacity;
     }
 }

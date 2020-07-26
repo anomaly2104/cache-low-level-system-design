@@ -12,7 +12,6 @@ import java.util.NoSuchElementException;
  *
  * @param <E> Type of element stored in list.
  */
-@Getter
 public class DoublyLinkedList<E> {
 
     DoublyLinkedListNode<E> dummyHead;
@@ -75,19 +74,19 @@ public class DoublyLinkedList<E> {
         return dummyHead.next != dummyTail;
     }
 
-    public DoublyLinkedListNode getFirstElement() throws NoSuchElementException {
+    public DoublyLinkedListNode getFirstNode() throws NoSuchElementException {
         DoublyLinkedListNode item = null;
-        if (isItemPresent()) {
-            item = dummyHead.next;
+        if (!isItemPresent()) {
+            return null;
         }
-        return item;
+        return dummyHead.next;
     }
 
-    public DoublyLinkedListNode getLastElement() throws NoSuchElementException {
+    public DoublyLinkedListNode getLastNode() throws NoSuchElementException {
         DoublyLinkedListNode item = null;
-        if (isItemPresent()) {
-            item = dummyTail.prev;
+        if (!isItemPresent()) {
+            return null;
         }
-        return item;
+        return dummyTail.prev;
     }
 }
