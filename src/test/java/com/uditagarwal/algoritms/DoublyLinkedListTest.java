@@ -43,6 +43,7 @@ class DoublyLinkedListTest {
         DoublyLinkedListNode<Integer> node3 = dll.addElementAtLast(3);
         DoublyLinkedListNode<Integer> node4 = dll.addElementAtLast(4);
         DoublyLinkedListNode<Integer> node5 = dll.addElementAtLast(5);
+
         verifyDLL(dll, ImmutableList.of(1, 2, 3, 4, 5));
 
         dll.detachNode(node1);
@@ -62,12 +63,12 @@ class DoublyLinkedListTest {
         assertEquals(expectedListElements.get(expectedListElements.size() - 1), dll.getLastElement().getElement());
         assertEquals(expectedListElements.get(0), dll.getFirstElement().getElement());
 
-        DoublyLinkedListNode<Integer> currentNode = dll.getLastElement();
+        DoublyLinkedListNode<Integer> currentNode = dll.getFirstElement();
         for (Integer expectedListElement : expectedListElements) {
             assertNotNull(currentNode);
             assertEquals(expectedListElement, currentNode.getElement());
             currentNode = currentNode.getNext();
         }
-        assertNull(currentNode);
+        assertNull(currentNode.next);
     }
 }

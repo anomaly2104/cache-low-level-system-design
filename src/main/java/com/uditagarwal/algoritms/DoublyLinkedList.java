@@ -37,8 +37,10 @@ public class DoublyLinkedList<E> {
      */
     public void detachNode(DoublyLinkedListNode<E> node) {
         // Just Simply modifying the pointers.
-        node.prev.next = node.next;
-        node.next.prev = node.prev;
+        if (node != null) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+        }
     }
 
     /**
