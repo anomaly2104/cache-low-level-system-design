@@ -25,6 +25,7 @@ public class Cache<Key, Value> {
                 throw new RuntimeException("Unexpected State. Storage full and no key to evict.");
             }
             this.storage.remove(keyToRemove);
+            System.out.println("Removing Least Recently used item..." + keyToRemove);
             put(key, value);
         }
     }

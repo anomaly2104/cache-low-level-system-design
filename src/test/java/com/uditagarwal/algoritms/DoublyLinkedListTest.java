@@ -59,10 +59,10 @@ class DoublyLinkedListTest {
     }
 
     void verifyDLL(DoublyLinkedList<Integer> dll, List<Integer> expectedListElements) {
-        assertEquals(expectedListElements.get(expectedListElements.size() - 1), dll.getLast().getElement());
-        assertEquals(expectedListElements.get(0), dll.getFirst().getElement());
+        assertEquals(expectedListElements.get(expectedListElements.size() - 1), dll.getLastElement().getElement());
+        assertEquals(expectedListElements.get(0), dll.getFirstElement().getElement());
 
-        DoublyLinkedListNode<Integer> currentNode = dll.getFirst();
+        DoublyLinkedListNode<Integer> currentNode = dll.getLastElement();
         for (Integer expectedListElement : expectedListElements) {
             assertNotNull(currentNode);
             assertEquals(expectedListElement, currentNode.getElement());
