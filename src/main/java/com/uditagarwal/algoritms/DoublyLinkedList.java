@@ -1,8 +1,9 @@
 package com.uditagarwal.algoritms;
 
 import com.uditagarwal.algoritms.exceptions.InvalidElementException;
-import com.uditagarwal.algoritms.exceptions.InvalidNodeException;
 import lombok.Getter;
+
+import java.util.NoSuchElementException;
 
 /**
  * An object which support creating a list with non-contiguous memory allocation. You cannot access a random element
@@ -11,15 +12,20 @@ import lombok.Getter;
  *
  * @param <E> Type of element stored in list.
  */
-@Getter
 public class DoublyLinkedList<E> {
 
-    DoublyLinkedListNode<E> first;
-    DoublyLinkedListNode<E> last;
+    DoublyLinkedListNode<E> dummyHead;
+    DoublyLinkedListNode<E> dummyTail;
 
     public DoublyLinkedList() {
-        first = null;
-        last = null;
+        // We can instantiate these by null, since we are never gonna use val for these dummyNodes
+        dummyHead = new DoublyLinkedListNode<>(null);
+        dummyTail = new DoublyLinkedListNode<>(null);
+
+        // Also Initially there are no items
+        // so just join dummyHead and Tail, we can add items in between them easily.
+        dummyHead.next = dummyTail;
+        dummyTail.prev = dummyHead;
     }
 
     /**
@@ -29,20 +35,8 @@ public class DoublyLinkedList<E> {
      * @param node Node to be detached.
      */
     public void detachNode(DoublyLinkedListNode<E> node) {
-        if (node == null) {
-            return;
-        }
-        if (node.equals(first)) {
-            first = first.next;
-            if (first != null) {
-                first.prev = null;
-            }
-        } else if (node.equals(last)) {
-            last = last.prev;
-            if (last.next != null) {
-                last.next = null;
-            }
-        } else {
+        // Just Simply modifying the pointers.
+        if (node != null) {
             node.prev.next = node.next;
             node.next.prev = node.prev;
         }
@@ -54,18 +48,11 @@ public class DoublyLinkedList<E> {
      * @param node Node to be added.
      */
     public void addNodeAtLast(DoublyLinkedListNode<E> node) {
-        if (node == null) {
-            throw new InvalidNodeException();
-        }
-        if (last == null) {
-            last = node;
-            first = node;
-        } else {
-            last.next = node;
-            node.prev = last;
-            node.next = null;
-            last = node;
-        }
+        DoublyLinkedListNode tailPrev = dummyTail.prev;
+        tailPrev.next = node;
+        node.next = dummyTail;
+        dummyTail.prev = node;
+        node.prev = tailPrev;
     }
 
     /**
@@ -81,5 +68,25 @@ public class DoublyLinkedList<E> {
         DoublyLinkedListNode<E> newNode = new DoublyLinkedListNode<>(element);
         addNodeAtLast(newNode);
         return newNode;
+    }
+
+    public boolean isItemPresent() {
+        return dummyHead.next != dummyTail;
+    }
+
+    public DoublyLinkedListNode getFirstNode() throws NoSuchElementException {
+        DoublyLinkedListNode item = null;
+        if (!isItemPresent()) {
+            return null;
+        }
+        return dummyHead.next;
+    }
+
+    public DoublyLinkedListNode getLastNode() throws NoSuchElementException {
+        DoublyLinkedListNode item = null;
+        if (!isItemPresent()) {
+            return null;
+        }
+        return dummyTail.prev;
     }
 }

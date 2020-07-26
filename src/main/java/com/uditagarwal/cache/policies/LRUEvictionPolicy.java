@@ -35,8 +35,8 @@ public class LRUEvictionPolicy<Key> implements EvictionPolicy<Key> {
 
     @Override
     public Key evictKey() {
-        DoublyLinkedListNode<Key> first = dll.getFirst();
-        if (first == null) {
+        DoublyLinkedListNode<Key> first = dll.getFirstNode();
+        if(first == null) {
             return null;
         }
         dll.detachNode(first);
