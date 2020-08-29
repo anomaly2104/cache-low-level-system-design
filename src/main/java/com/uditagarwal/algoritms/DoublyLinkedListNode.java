@@ -18,4 +18,8 @@ public class DoublyLinkedListNode<E> {
         this.next = null;
         this.prev = null;
     }
+    
+    public E getElement() {
+        return element;
+    }
 }
