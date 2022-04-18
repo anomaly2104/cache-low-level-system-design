@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DoublyLinkedListTest {
+class TestDoublyLinkedListTest {
 
     @Test
     void testDLLAddition() {
@@ -39,9 +39,7 @@ class DoublyLinkedListTest {
         DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
 
         DoublyLinkedListNode<Integer> node1 = dll.addElementAtLast(1);
-        DoublyLinkedListNode<Integer> node2 = dll.addElementAtLast(2);
         DoublyLinkedListNode<Integer> node3 = dll.addElementAtLast(3);
-        DoublyLinkedListNode<Integer> node4 = dll.addElementAtLast(4);
         DoublyLinkedListNode<Integer> node5 = dll.addElementAtLast(5);
 
         verifyDLL(dll, ImmutableList.of(1, 2, 3, 4, 5));
@@ -67,7 +65,7 @@ class DoublyLinkedListTest {
         for (Integer expectedListElement : expectedListElements) {
             assertNotNull(currentNode);
             assertEquals(expectedListElement, currentNode.getElement());
-            currentNode = currentNode.getNext();
+            currentNode = currentNode.next;
         }
         assertNull(currentNode.next);
     }
