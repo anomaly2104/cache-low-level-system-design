@@ -1,7 +1,6 @@
 package com.uditagarwal.algoritms;
 
 import com.uditagarwal.algoritms.exceptions.InvalidElementException;
-import lombok.Getter;
 
 import java.util.NoSuchElementException;
 
@@ -48,7 +47,7 @@ public class DoublyLinkedList<E> {
      * @param node Node to be added.
      */
     public void addNodeAtLast(DoublyLinkedListNode<E> node) {
-        DoublyLinkedListNode tailPrev = dummyTail.prev;
+        DoublyLinkedListNode<E> tailPrev = dummyTail.prev;
         tailPrev.next = node;
         node.next = dummyTail;
         dummyTail.prev = node;
@@ -74,16 +73,14 @@ public class DoublyLinkedList<E> {
         return dummyHead.next != dummyTail;
     }
 
-    public DoublyLinkedListNode getFirstNode() throws NoSuchElementException {
-        DoublyLinkedListNode item = null;
+    public DoublyLinkedListNode<E> getFirstNode() throws NoSuchElementException {
         if (!isItemPresent()) {
             return null;
         }
         return dummyHead.next;
     }
 
-    public DoublyLinkedListNode getLastNode() throws NoSuchElementException {
-        DoublyLinkedListNode item = null;
+    public DoublyLinkedListNode<E> getLastNode() throws NoSuchElementException {
         if (!isItemPresent()) {
             return null;
         }

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Copyright (c) 2019, lld-cache.
  * All rights reserved.
  */
-public class CacheTest {
+public class TestCacheTest {
 
     Cache<Integer, Integer> cache;
 
